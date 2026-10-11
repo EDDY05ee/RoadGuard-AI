@@ -1,84 +1,104 @@
-RoadGuard AI 🚧
+🚧 RoadGuard AI
 
-AI-powered road hazard detection, risk assessment, and reporting dashboard.
+AI-Powered Road Hazard Detection and Risk Assessment
 
-RoadGuard AI is a prototype designed to help identify road hazards using computer vision and organize reports so that potential road safety issues can be reviewed and prioritized.
+RoadGuard AI is an AI-powered road safety prototype designed to detect road hazards from images, assess potential risk, and help users manage and prioritize road hazard reports.
 
-Features
+The project combines computer vision, risk assessment, and a dashboard to support safer roads and more organized hazard reporting.
+
+✨ Features
 
 - AI Road Inspection: Analyze uploaded road images using a YOLO-based object detection model.
-- Hazard Detection: Detect supported road damage categories such as potholes and road cracks.
-- Risk Assessment: Display a risk score and suggested action to help prioritize reported hazards.
-- Manual Reporting: Submit road hazard reports with location and description details.
+- Hazard Detection: Detect supported road damage categories, including potholes and road cracks.
+- Risk Assessment: Display an indicative risk score and priority for detected hazards.
+- Hazard Reporting: Create reports with location, severity, and description details.
 - Report Management: Search, filter, review, and update report statuses.
-- Location Analytics: Explore recorded reports and hazard trends.
-- Dashboard: View key metrics and summaries of reported hazards.
-- Data Storage: Save report information in a local SQLite database.
+- Location Analytics: Explore recorded hazards and location-based report trends.
+- Interactive Dashboard: View key metrics and summaries of hazard reports.
+- Database Storage: Save report information locally using SQLite.
 
-Technology Stack
+🛠️ Technology Stack
 
 - Python
 - Streamlit
 - Ultralytics YOLO
-- Hugging Face model repository
+- Hugging Face Hub
 - SQLite
 - Pandas
 - Pillow
 
-Getting Started
+📂 Project Structure
+
+RoadGuard-AI/
+├── app.py
+├── database.py
+├── download_model.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+
+The AI model weights and SQLite database may be created locally when the application runs.
+
+🚀 Installation and Setup
 
 1. Clone the repository
 
-git clone https://github.com/YOUR-USERNAME/RoadGuard-AI.git
+git clone https://github.com/EDDY05ee/RoadGuard-AI.git
 cd RoadGuard-AI
 
-Replace "YOUR-USERNAME" with your GitHub username.
+2. Create a virtual environment
 
-2. Create and activate a virtual environment
-
-Windows:
+On Windows, run:
 
 python -m venv .venv
-.venv\Scripts\activate
 
 3. Install dependencies
 
-pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
 4. Download the AI model
 
-If the project includes "download_model.py", run:
+Run the model download script:
 
-python download_model.py
+.\.venv\Scripts\python.exe download_model.py
 
-Make sure the model download script and "app.py" use the same model path.
+Ensure the script downloads the model to the location expected by "app.py".
 
-5. Start the application
+5. Launch the application
 
-python -m streamlit run app.py
+.\.venv\Scripts\python.exe -m streamlit run app.py
 
-Open the local URL displayed in your terminal.
+Open the local URL displayed in your terminal to use the dashboard.
 
-Model
+🤖 AI Model
 
-This project uses the "vinothvikas1987/pothole-detection-yolov8" model from Hugging Face. Refer to the model card and its license before redistribution or deployment.
+RoadGuard AI uses the following Hugging Face model repository:
 
-Important Notes
+"vinothvikas1987/pothole-detection-yolov8" (https://huggingface.co/vinothvikas1987/pothole-detection-yolov8)
 
-- This is a prototype intended to assist road hazard reporting and prioritization.
-- AI predictions can be inaccurate or miss hazards. Results should be reviewed by a person.
+Review the model card and license before redistributing model weights or deploying the application. The model may be downloaded separately instead of being stored in GitHub.
+
+🛡️ Safety and Limitations
+
+- This project is a hackathon prototype.
+- AI detections may be inaccurate or may miss hazards.
 - Risk scores are indicative and should not be treated as official engineering assessments.
-- Keep private information and real-world sensitive reports out of public repositories.
-- The model weights may need to be downloaded separately before running the application.
+- Detected hazards should be reviewed by a person before decisions are made.
+- Do not commit passwords, API tokens, private reports, or sensitive personal information.
 
-Future Improvements
+🔮 Future Improvements
 
-- GPS-based hazard mapping
-- Integration with official road maintenance workflows
-- Improved detection and severity estimation
+- GPS-based road hazard mapping
+- Live hazard reporting and notifications
+- Integration with road maintenance authorities
+- Improved detection accuracy and severity estimation
 - Mobile-friendly reporting
-- Notifications for high-priority hazards
+- More advanced location analytics
 
-Project Status
+🎯 Project Goal
+
+The goal of RoadGuard AI is to explore how artificial intelligence can assist with identifying road hazards, organizing reports, and prioritizing potential road safety issues.
+
+👨‍💻 Project Status
 
 Hackathon prototype — under development.
